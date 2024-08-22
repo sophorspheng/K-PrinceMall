@@ -19,7 +19,7 @@ export default function Layout() {
       <nav className="fixed top-0 left-0 w-full z-50  p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <h1 className="font-semibold  text-3xl font-serif pr-8 xl:hidden">
+            <h1 className="font-semibold  text-lg font-serif xl:hidden">
               K-PrinceMall
             </h1>
             
@@ -78,7 +78,7 @@ export default function Layout() {
                 <a href="">REGISTER</a>
               </li>
               <MenuOutlined
-                className="text-xl xl:hidden font-semibold  hover:cursor-pointer hover:bg-gray-200s p-2 rounded-md"
+                className="text-xl xl:hidden font-semibold  text-red-500  hover:cursor-pointer hover:bg-gray-200s p-2 rounded-md"
                 onClick={() => setIsOpen(!isOpen)}
               />
             </div>
@@ -89,7 +89,7 @@ export default function Layout() {
         {isOpen && (
           <div
             className="fixed inset-0 z-50 bg-gray-900 bg-opacity-75 flex flex-col gap-6 font-semibold text-lg p-6 overflow-y-auto"
-            style={{ zIndex: 1000 }} // Ensures it's above everything else
+            style={{ Index: 1000 }} // Ensures it's above everything else
           >
             <div className="text-center mb-4">
               {/* <h1 className="font-semibold text-3xl">K-Prince Mall</h1> */}
