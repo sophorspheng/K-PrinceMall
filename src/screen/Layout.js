@@ -3,11 +3,16 @@ import {
   BellOutlined,
   CloseCircleFilled,
   HeartOutlined,
+  LoginOutlined,
   MenuOutlined,
   SearchOutlined,
   ShoppingOutlined,
+  UsergroupAddOutlined,
 } from "@ant-design/icons";
 import { Link, Outlet } from "react-router-dom";
+import { LuLogIn } from "react-icons/lu";
+import { BsSignRailroadFill } from "react-icons/bs";
+import { LiaRegistered } from "react-icons/lia";
 
 export default function Layout() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +24,7 @@ export default function Layout() {
       <nav className="fixed top-0 left-0 w-full z-50  p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <h1 className="font-semibold  text-lg font-serif xl:hidden pb-5">
+            <h1 className="font-semibold  text-lg text-center font-serif xl:hidden pb-5">
               K-PrinceMall
             </h1>
             
@@ -100,7 +105,7 @@ export default function Layout() {
                 onClick={() => setIsOpen(false)}
               />
             </div>
-            <ul className="space-y-4 text-center text-3xl text-white">
+            <ul className="space-y-4 text-right text-3xl text-white">
               <li>
                 <a href="">WOMEN</a>
               </li>
@@ -114,6 +119,16 @@ export default function Layout() {
                 <a href="">GIRLS</a>
               </li>
             </ul>
+            <li className="list-none absolute gap-28 p-4 bg-red-300 rounded-lg">
+              
+                <Link to="/login" className="flex gap-3  list-none text-3xl font-semibol hover:cursor-pointer text-white hover:bg-gray-200  p-2 rounded-md ">
+                LOGIN<LoginOutlined/>
+                </Link>
+                <Link to="/" className="flex gap-3 text-3xl font-semibol hover:cursor-pointer text-white hover:bg-gray-200  p-2 rounded-md ">
+                REGISTER<UsergroupAddOutlined/>
+                </Link>
+              </li>
+              
           </div>
         )}
       </nav>
