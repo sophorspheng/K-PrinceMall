@@ -19,7 +19,7 @@ export default function Layout() {
       <nav className="fixed top-0 left-0 w-full z-50  p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <h1 className="font-semibold  text-lg font-serif xl:hidden">
+            <h1 className="font-semibold  text-lg font-serif xl:hidden pb-5">
               K-PrinceMall
             </h1>
             
