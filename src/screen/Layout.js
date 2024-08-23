@@ -13,6 +13,7 @@ import { Link, Outlet } from "react-router-dom";
 import { LuLogIn } from "react-icons/lu";
 import { BsSignRailroadFill } from "react-icons/bs";
 import { LiaRegistered } from "react-icons/lia";
+import qr from '../assets/images/qr.png'
 
 export default function Layout() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Layout() {
   return (
     <div>
       {/* Fixed Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50  p-4">
+      <nav className="fixed top-0 bg-white left-0 w-full z-50  p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <h1 className="font-semibold  text-lg text-center font-serif xl:hidden pb-5">
@@ -76,8 +77,8 @@ export default function Layout() {
               <BellOutlined className="text-xl  hover:cursor-pointer hover:bg-gray-200 p-2 rounded-md" />
               <HeartOutlined className="text-xl hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md" />
               <ShoppingOutlined className="text-xl hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md" />
-              <li className="list-none font-semibol hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md hidden xl:block">
-                <Link to="/login">LOGIN</Link>
+              <li className="list-none font-semibold  hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md hidden xl:block">
+                <a href="/login">LOGIN</a>
               </li>
               <li className="list-none font-semibold  hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md hidden xl:block">
                 <a href="">REGISTER</a>
@@ -136,6 +137,16 @@ export default function Layout() {
       {/* Content Below the Navbar */}
       <div className="p-4 pt-20"> {/* Adjust the padding-top to match the navbar height */}
         <Outlet />
+      </div>
+      <div className="flex w-full gap-10 h-screen pl-8">
+      <div className="pt-10">
+        <p className="font-semibold text-xl">K-Prince Mall App</p>
+        <img src={qr} className="w-32 pt-5 pl-5"/>
+      </div>
+      <div className=" pt-10">
+        <p className="font-semibold text-xl">K-Prince Mall App</p>
+        <img src={qr} className="w-32 pt-5 pl-5"/>
+      </div>
       </div>
     </div>
   );
