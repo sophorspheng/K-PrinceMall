@@ -20,16 +20,16 @@ export default function HomePage() {
 
     <nav>
     <div className="w-full">
-      <div className="w-full">
+      <div className="w-full h-full p-5">
         <Slide 
           easing="ease" 
           className="rounded-lg shadow-lg overflow-hidden"
           arrows={false} // Hide the arrows directly via props
         >
           {slideImages.map((each, index) => (
-            <div key={index} className="each-slide border round-xl text-red-600">
+            <div key={index} className="grid grid-cols-1+h-96 each-slide  border round-xl text-red-600">
               <div
-                className="bg-cover bg-center w-full"
+                className="bg-cover bg-center w-full "
                 style={{ backgroundImage: `url(${each})` , height:'45rem'}}
               >
               </div>
@@ -41,87 +41,25 @@ export default function HomePage() {
 
     {/* ///image style */}
 
-    <div className='pl-5 pr-5'>
+    <div className='w-full h-full p-5'>
      {/* ///responsive md*/}
-     <div className='pt-8   hidden sm:flex'>
-      <card className= 'p-4'>
-        <img src={twin} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= 'p-4'>
-        <img src={girl} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= 'p-4'>
-        <img src={smart} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-    </div>
-    {/* ///responsive md*/}
-     {/* ///responsive sm*/}
-     <div className='pt-8  gap-6 flex sm:hidden'>
-      <card className= ''>
-        <img src={twin} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= ''>
-        <img src={girl} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= ''>
-        <img src={smart} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-    </div>
-    {/* ///responsive sm*/}
+     <div className='items-center justify-center pb-1 w-full h-auto flex grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2'>
 
-    {/* ///2 */}
-    {/* ///responsive md*/}
-    <div className='pt-8   hidden sm:flex'>
-      <card className= 'p-4'>
-        <img src={twinboy} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= 'p-4'>
-        <img src={purpleman} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= 'p-4'>
-        <img src={lineman} className='w-full  h-auto' style={{ height:'40rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
+        <img src={twin} className='shadow shadow-gray-400 drop-shadow-xl '  alt=''/>
+        <img src={girl} className='shadow shadow-gray-400 drop-shadow-xl ' alt=''/>
+        <img src={smart} className='shadow shadow-gray-400 drop-shadow-xl '  alt=''/>
+       
     </div>
-    {/* ///responsive md*/}
-     {/* ///responsive sm*/}
-     <div className='pt-8  gap-6 flex sm:hidden'>
-      <card className= ''>
-        <img src={twinboy} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= ''>
-        <img src={purpleman} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
-      <card className= ''>
-        <img src={lineman} className='w-full  h-auto' style={{ height:'20rem', width:'40rem' }} alt=''/>
-        <nav className='flex space-x-7 p-2'>
-        </nav>
-      </card>
+     <div className=' items-center justify-center pt-8 w-full h-auto flex grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2'>
+
+        <img src={twinboy} className=''  alt=''/>
+        <img src={purpleman} className='' alt=''/>
+        <img src={lineman} className='grid '  alt=''/>
+       
     </div>
-    {/* ///responsive sm*/}
    
-    <div className='bg-green-500 p-6'>
+   <div className='pt-10'>
+    <div className='bg-green-500 w-full p-5 '>
     <Slide 
           easing="ease" 
           className="rounded-lg shadow-lg overflow-hidden"
@@ -132,26 +70,14 @@ export default function HomePage() {
           ))}
         </Slide>
     </div>
+    
     <div className=''>
     <div className='pt-5 pb-5 flex justify-between w-full'>
       <h4 className='font-semibold text-xl hover:cursor-pointer hover:text-red-600'  onClick={alert}>Now Trending!</h4>
       <h4 className='font-semibold text-xl hover:cursor-pointer hover:text-red-600' onClick={alert}>Shop more</h4>
     </div>
-    <Slide 
-          easing="ease" 
-          className="rounded-lg shadow-lg overflow-hidden"
-          arrows={false} // Hide the arrows directly via props
-        >
-          {slideImages.map((each, index) => (
-            <div key={index} className="each-slide border round-xl text-red-600">
-              <div
-                className="bg-cover w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2"
-                style={{ backgroundImage: `url(${each})` , height:'45rem'}}
-              >
-              </div>
-            </div>
-          ))}
-        </Slide>
+    </div>
+    
     </div>
     </div>
     </nav>
