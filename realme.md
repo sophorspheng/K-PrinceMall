@@ -6,7 +6,7 @@
             <h1 className="font-semibold  text-lg text-center font-serif xl:hidden pb-5">
               K-PrinceMall
             </h1>
-            
+            ///asdfasdfkasdlf
             <ul className="list-none grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 flex hidden xl:flex space-x-10 font-semibold text-md">
               <li
                 className="relative hover:bg-gray-200  p-2 rounded-md"
