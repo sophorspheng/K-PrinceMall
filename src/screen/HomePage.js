@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import slide1 from "../assets/images/11.png";
+import slide1 from "../assets/images/princess.png";
 import slide2 from "../assets/images/12.jpg";
 import slide3 from "../assets/images/13.jpg";
 import twin from "../assets/images/twin.png";
@@ -71,24 +71,16 @@ export default function HomePage() {
   };
 
   return (
-    <nav>
-      <div className="w-full">
-        <div className="w-full h-full p-5">
+    <nav className="sm:p-0 md:p-20">
+      <div className="">
+        <div className="w-full h-auto">
           <Slide
             easing="ease"
-            className="rounded-lg shadow-lg overflow-hidden"
+            className="rounded-lg shadow-lg"
             arrows={false} // Hide the arrows directly via props
           >
             {slideImages.map((each, index) => (
-              <div
-                key={index}
-                className="grid grid-cols-1+h-96 each-slide  border round-xl text-red-600"
-              >
-                <div
-                  className="bg-cover bg-center w-full "
-                  style={{ backgroundImage: `url(${each})`, height: "45rem" }}
-                ></div>
-              </div>
+              <img src={each} className="w-full"/>
             ))}
           </Slide>
         </div>
@@ -96,7 +88,7 @@ export default function HomePage() {
 
       {/* ///image style */}
 
-      <div className="w-full h-full p-5">
+      <div className="w-full h-full pt-10">
         {/* ///responsive md*/}
         <div className="items-center justify-center pb-1 w-full h-auto flex grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
           <img
