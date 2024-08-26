@@ -49,9 +49,9 @@ export default function Layout() {
   const [dropdownVisible3, setDropdownVisible3] = useState(false);
 
   return (
-    <div className="p-8 w-full h-screen">
+    <div className="md:p-20 w-full h-full">
       {/* Fixed Navbar */}
-      <nav className="fixed top-0 bg-white left-0 w-full z-50  p-8">
+      <nav className=" top-0 bg-white left-0 z-30 w-full">
       <div className="flex justify-around items-center  bg-white">
         <div className="hidden md:flex sm:flex">
           <ul className="flex gap-x-3 font-semibold text-xl hidden lg:flex">
@@ -75,8 +75,8 @@ export default function Layout() {
 
           <SearchOutlined className="text-xl md:hidden" />
           <BellOutlined className="text-xl" />
-          <HeartOutlined className="text-xl" />
-          <MessageOutlined className="text-xl" />
+          <HeartOutlined className="text-xl hidden  md:flex" />
+          <MessageOutlined className="text-xl hidden md:flex" />
           <button className="font-semibold md:text-xl">LOGIN</button>
           <button className="font-semibold md:text-xl">REGISTER</button>
           <MenuOutlined className="md:hidden font-semibold text-xl bg-white p-2 shadow-md shadow-gray-400 rounded-xl h-10"/>
