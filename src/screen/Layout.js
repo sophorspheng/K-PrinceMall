@@ -25,6 +25,14 @@ import { BsCardChecklist, BsSignRailroadFill } from "react-icons/bs";
 import { LiaRegistered } from "react-icons/lia";
 import qr from '../assets/images/qr.png'
 import aba from '../assets/images/aba.png'
+import cc from '../assets/images/cc.png'
+import ac from '../assets/images/ac.png'
+import visa from '../assets/images/visa.png'
+import union from '../assets/images/unionpay.png'
+import jcb from '../assets/images/jcb.png'
+import wing from '../assets/images/wing.png'
+import c from '../assets/images/c.png'
+
 import { FaFacebook } from "react-icons/fa";
 import { CiFacebook, CiInstagram } from "react-icons/ci";
 import { BiBox, BiHeartCircle, BiPackage, BiPhoneCall } from "react-icons/bi";
@@ -34,6 +42,9 @@ import { TbCircleLetterS, TbSquareLetterSFilled } from "react-icons/tb";
 export default function Layout() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdownVisible1, setDropdownVisible1] = useState(false);
+  const [dropdownVisible2, setDropdownVisible2] = useState(false);
+  const [dropdownVisible3, setDropdownVisible3] = useState(false);
 
   return (
     <div className="p-8 w-full h-screen">
@@ -45,7 +56,7 @@ export default function Layout() {
               K-PrinceMall
             </h1>
             
-            <ul className="list-none flex hidden xl:flex space-x-10 font-semibold text-md">
+            <ul className="list-none grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 flex hidden xl:flex space-x-10 font-semibold text-md">
               <li
                 className="relative hover:bg-gray-200  p-2 rounded-md"
                 onMouseEnter={() => setDropdownVisible(true)}
@@ -53,29 +64,332 @@ export default function Layout() {
               >
                 <Link to="/">WOMEN</Link>
                 {/* Dropdown Menu */}
+                <div className="bg-red-600 flex">
                 {dropdownVisible && (
-                  <ul className="absolute top-full left-0 bg-white text-black border border-gray-300 rounded-md mt-2 shadow-lg">
-                    <li className="hover:bg-gray-200 p-2">
-                      <Link to="/women/new-arrivals">New Arrivals</Link>
-                    </li>
-                    <li className="hover:bg-gray-200 p-2">
-                      <Link to="/women/sale">Sale</Link>
-                    </li>
-                    <li className="hover:bg-gray-200 p-2">
-                      <Link to="/women/trending">Trending</Link>
-                    </li>
+
+                  <div className="absolute p-5 w-screen bg-white text-black border border-gray-300 rounded-md mt-2 shadow-lg">
+                    
+                  <div className="flex gap-10">
+                  
+                  <ul className="font-thin space-y-3">
+                    <h2 className="font-semibold text-xl">New In</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Casual</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportlife</li>
+                    <li className="hover:underline hover:cursor-pointer">Lifetyle</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Top</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Dress</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Bottom</li>
                   </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Clothing</h2>
+                    <li className="hover:underline hover:cursor-pointer">Linen</li>
+                    <li className="hover:underline hover:cursor-pointer">Top</li>
+                    <li className="hover:underline hover:cursor-pointer">Vest</li>
+                    <li className="hover:underline hover:cursor-pointer">Blazers</li>
+                    <li className="hover:underline hover:cursor-pointer">Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Bras</li>
+                    <li className="hover:underline hover:cursor-pointer">Jackets</li>
+                    <li className="hover:underline hover:cursor-pointer">T-Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Polo Shirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Hoodies & Sweatshirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Jumpsuits</li>
+                    <li className="hover:underline hover:cursor-pointer">Dresses</li>
+                    <li className="hover:underline hover:cursor-pointer">Cardigan</li>
+                    <li className="hover:underline hover:cursor-pointer">Blouses</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportwears</li>
+                    <li className="hover:underline hover:cursor-pointer">Trousers</li>
+                    <li className="hover:underline hover:cursor-pointer">Jeans</li>
+                    <li className="hover:underline hover:cursor-pointer">Skirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Shorts</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shoes</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Loafers</li>
+                    <li className="hover:underline hover:cursor-pointer">Sandals</li>
+                    <li className="hover:underline hover:cursor-pointer">Sneakers</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Accessories</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Gloves</li>
+                    <li className="hover:underline hover:cursor-pointer">Scarf</li>
+                    <li className="hover:underline hover:cursor-pointer">Belts</li>
+                    <li className="hover:underline hover:cursor-pointer">UnderWears</li>
+                    <li className="hover:underline hover:cursor-pointer">Socks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bows</li>
+                    <li className="hover:underline hover:cursor-pointer">Caps & Hats</li>
+                    <li className="hover:underline hover:cursor-pointer">Backpacks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bags</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shop by collections</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Life in a journey collection</li>
+                    <li className="hover:underline hover:cursor-pointer">361 adventure collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Princess Jenna x TEN 11</li>
+                    <li className="hover:underline hover:cursor-pointer">Cottage core collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Rider collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Denim</li>
+                  </ul>
+                  
+                  </div>
+                  </div>
                 )}
+                </div>
               </li>
-              <li  className="hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md">
-              <Link to="/register">MEN</Link>
+
+              {/* MEN */}
+              <li
+                className="relative hover:bg-gray-200  p-2 rounded-md"
+                onMouseEnter={() => setDropdownVisible1(true)}
+                onMouseLeave={() => setDropdownVisible1(false)}
+              >
+                <Link to="/">MEN</Link>
+                {/* Dropdown Menu */}
+                <div className="bg-red-600 flex">
+                {dropdownVisible1 && (
+
+                  <div className="absolute p-5 w-screen bg-white text-black border border-gray-300 rounded-md mt-2 shadow-lg">
+                    
+                  <div className="flex gap-10">
+                  
+                  <ul className="font-thin space-y-3">
+                    <h2 className="font-semibold text-xl">New In</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Casual</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportlife</li>
+                    <li className="hover:underline hover:cursor-pointer">Lifetyle</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Top</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Dress</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Bottom</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Clothing</h2>
+                    <li className="hover:underline hover:cursor-pointer">Linen</li>
+                    <li className="hover:underline hover:cursor-pointer">Top</li>
+                    <li className="hover:underline hover:cursor-pointer">Vest</li>
+                    <li className="hover:underline hover:cursor-pointer">Blazers</li>
+                    <li className="hover:underline hover:cursor-pointer">Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Bras</li>
+                    <li className="hover:underline hover:cursor-pointer">Jackets</li>
+                    <li className="hover:underline hover:cursor-pointer">T-Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Polo Shirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Hoodies & Sweatshirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Jumpsuits</li>
+                    <li className="hover:underline hover:cursor-pointer">Dresses</li>
+                    <li className="hover:underline hover:cursor-pointer">Cardigan</li>
+                    <li className="hover:underline hover:cursor-pointer">Blouses</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportwears</li>
+                    <li className="hover:underline hover:cursor-pointer">Trousers</li>
+                    <li className="hover:underline hover:cursor-pointer">Jeans</li>
+                    <li className="hover:underline hover:cursor-pointer">Skirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Shorts</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shoes</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Loafers</li>
+                    <li className="hover:underline hover:cursor-pointer">Sandals</li>
+                    <li className="hover:underline hover:cursor-pointer">Sneakers</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Accessories</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Gloves</li>
+                    <li className="hover:underline hover:cursor-pointer">Scarf</li>
+                    <li className="hover:underline hover:cursor-pointer">Belts</li>
+                    <li className="hover:underline hover:cursor-pointer">UnderWears</li>
+                    <li className="hover:underline hover:cursor-pointer">Socks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bows</li>
+                    <li className="hover:underline hover:cursor-pointer">Caps & Hats</li>
+                    <li className="hover:underline hover:cursor-pointer">Backpacks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bags</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shop by collections</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Life in a journey collection</li>
+                    <li className="hover:underline hover:cursor-pointer">361 adventure collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Princess Jenna x TEN 11</li>
+                    <li className="hover:underline hover:cursor-pointer">Cottage core collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Rider collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Denim</li>
+                  </ul>
+                  </div>
+                  </div>
+                )}
+                </div>
               </li>
-              <li className="hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md">
-                <a href="">BOYS</a>
+
+              {/* BOYS */}
+              <li
+                className="relative hover:bg-gray-200  p-2 rounded-md"
+                onMouseEnter={() => setDropdownVisible2(true)}
+                onMouseLeave={() => setDropdownVisible2(false)}
+              >
+                <Link to="/">BOYS</Link>
+                {/* Dropdown Menu */}
+                <div className="bg-red-600 flex">
+                {dropdownVisible2 && (
+
+                  <div className="absolute p-5 w-screen bg-white text-black border border-gray-300 rounded-md mt-2 shadow-lg">
+                    
+                  <div className="flex gap-10">
+                  
+                  <ul className="font-thin space-y-3">
+                    <h2 className="font-semibold text-xl">New In</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Casual</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportlife</li>
+                    <li className="hover:underline hover:cursor-pointer">Lifetyle</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Top</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Dress</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Bottom</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Clothing</h2>
+                    <li className="hover:underline hover:cursor-pointer">Linen</li>
+                    <li className="hover:underline hover:cursor-pointer">Top</li>
+                    <li className="hover:underline hover:cursor-pointer">Vest</li>
+                    <li className="hover:underline hover:cursor-pointer">Blazers</li>
+                    <li className="hover:underline hover:cursor-pointer">Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Bras</li>
+                    <li className="hover:underline hover:cursor-pointer">Jackets</li>
+                    <li className="hover:underline hover:cursor-pointer">T-Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Polo Shirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Hoodies & Sweatshirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Jumpsuits</li>
+                    <li className="hover:underline hover:cursor-pointer">Dresses</li>
+                    <li className="hover:underline hover:cursor-pointer">Cardigan</li>
+                    <li className="hover:underline hover:cursor-pointer">Blouses</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportwears</li>
+                    <li className="hover:underline hover:cursor-pointer">Trousers</li>
+                    <li className="hover:underline hover:cursor-pointer">Jeans</li>
+                    <li className="hover:underline hover:cursor-pointer">Skirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Shorts</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shoes</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Loafers</li>
+                    <li className="hover:underline hover:cursor-pointer">Sandals</li>
+                    <li className="hover:underline hover:cursor-pointer">Sneakers</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Accessories</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Gloves</li>
+                    <li className="hover:underline hover:cursor-pointer">Scarf</li>
+                    <li className="hover:underline hover:cursor-pointer">Belts</li>
+                    <li className="hover:underline hover:cursor-pointer">UnderWears</li>
+                    <li className="hover:underline hover:cursor-pointer">Socks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bows</li>
+                    <li className="hover:underline hover:cursor-pointer">Caps & Hats</li>
+                    <li className="hover:underline hover:cursor-pointer">Backpacks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bags</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shop by collections</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Life in a journey collection</li>
+                    <li className="hover:underline hover:cursor-pointer">361 adventure collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Princess Jenna x TEN 11</li>
+                    <li className="hover:underline hover:cursor-pointer">Cottage core collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Rider collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Denim</li>
+                  </ul>
+                  </div>
+                  </div>
+                )}
+                </div>
               </li>
-              <li className="hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md">
+              {/* GIRLS */}
+              <li
+                className="relative hover:bg-gray-200  p-2 rounded-md"
+                onMouseEnter={() => setDropdownVisible2(true)}
+                onMouseLeave={() => setDropdownVisible2(false)}
+              >
+                <Link to="/">GIRLS</Link>
+                {/* Dropdown Menu */}
+                <div className="bg-red-600 flex">
+                {dropdownVisible3 && (
+
+                  <div className="absolute p-5 grid grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 bg-white text-black border border-gray-300 rounded-md mt-2 shadow-lg">
+                    
+                  <div className="flex gap-10">
+                  
+                  <ul className="font-thin space-y-3">
+                    <h2 className="font-semibold text-xl">New In</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Casual</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportlife</li>
+                    <li className="hover:underline hover:cursor-pointer">Lifetyle</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Top</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Dress</li>
+                    <li className="hover:underline hover:cursor-pointer">New In Bottom</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Clothing</h2>
+                    <li className="hover:underline hover:cursor-pointer">Linen</li>
+                    <li className="hover:underline hover:cursor-pointer">Top</li>
+                    <li className="hover:underline hover:cursor-pointer">Vest</li>
+                    <li className="hover:underline hover:cursor-pointer">Blazers</li>
+                    <li className="hover:underline hover:cursor-pointer">Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Bras</li>
+                    <li className="hover:underline hover:cursor-pointer">Jackets</li>
+                    <li className="hover:underline hover:cursor-pointer">T-Shirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Polo Shirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Hoodies & Sweatshirt</li>
+                    <li className="hover:underline hover:cursor-pointer">Jumpsuits</li>
+                    <li className="hover:underline hover:cursor-pointer">Dresses</li>
+                    <li className="hover:underline hover:cursor-pointer">Cardigan</li>
+                    <li className="hover:underline hover:cursor-pointer">Blouses</li>
+                    <li className="hover:underline hover:cursor-pointer">Sportwears</li>
+                    <li className="hover:underline hover:cursor-pointer">Trousers</li>
+                    <li className="hover:underline hover:cursor-pointer">Jeans</li>
+                    <li className="hover:underline hover:cursor-pointer">Skirts</li>
+                    <li className="hover:underline hover:cursor-pointer">Shorts</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shoes</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Loafers</li>
+                    <li className="hover:underline hover:cursor-pointer">Sandals</li>
+                    <li className="hover:underline hover:cursor-pointer">Sneakers</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Accessories</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Gloves</li>
+                    <li className="hover:underline hover:cursor-pointer">Scarf</li>
+                    <li className="hover:underline hover:cursor-pointer">Belts</li>
+                    <li className="hover:underline hover:cursor-pointer">UnderWears</li>
+                    <li className="hover:underline hover:cursor-pointer">Socks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bows</li>
+                    <li className="hover:underline hover:cursor-pointer">Caps & Hats</li>
+                    <li className="hover:underline hover:cursor-pointer">Backpacks</li>
+                    <li className="hover:underline hover:cursor-pointer">Bags</li>
+                  </ul>
+                  <ul className="font-thin space-y-3 ">
+                    <h2 className="font-semibold text-xl">Shop by collections</h2>
+                    <li className="hover:underline hover:cursor-pointer">All</li>
+                    <li className="hover:underline hover:cursor-pointer">Life in a journey collection</li>
+                    <li className="hover:underline hover:cursor-pointer">361 adventure collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Princess Jenna x TEN 11</li>
+                    <li className="hover:underline hover:cursor-pointer">Cottage core collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Rider collection</li>
+                    <li className="hover:underline hover:cursor-pointer">Denim</li>
+                  </ul>
+                  </div>
+                  </div>
+                )}
+                </div>
+              </li>
+              {/* <li className="hover:cursor-pointer hover:bg-gray-200  p-2 rounded-md">
                 <a href="">GIRLS</a>
-              </li>
+              </li> */}
             </ul>
             
           </div>
@@ -83,10 +397,14 @@ export default function Layout() {
               K-Prince Mall
             </h1>
           <div className="flex items-center gap-3 pr-36">
+
+            <div className="relative flex items-center hidden md:flex">
+              <SearchOutlined className="absolute left-3"/>
             <input
-              className="h-10 border hidden md:flex rounded-full border-gray-700 pl-8 pr-3"
+              className="h-10 border  rounded-full border-gray-700 pl-8 pr-3"
               placeholder="Search"
             />
+            </div>
             
             <div className="flex items-center gap-5">
               <SearchOutlined className="text-xl  md:hidden pl-3 hover:bg-gray-200 p-2 rounded-md hover:cursor-pointer" />
@@ -151,7 +469,7 @@ export default function Layout() {
       </nav>
 
       {/* Content Below the Navbar */}
-      <div className="p-4 pt-20"> {/* Adjust the padding-top to match the navbar height */}
+      <div className="p-4 pt-20 "> {/* Adjust the padding-top to match the navbar height */}
         <Outlet />
       </div>
       <div className="p-8 w-full h-screen flex gap-10 justify-center grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
@@ -186,16 +504,16 @@ export default function Layout() {
       <p className="font-semibold text-xl">WE ACCEPT</p>
         <div className="flex gap-2">
         <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
+        <img src={cc} className="w-12"/>
+        <img src={visa} className="w-12"/>
+        <img src={ac} className="w-12"/>
 
         </div>
         <div className="flex gap-2 pt-1.5">
-        <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
-        <img src={aba} className="w-12"/>
+        <img src={union} className="w-12"/>
+        <img src={jcb} className="w-12"/>
+        <img src={wing} className="w-12"/>
+        <img src={c} className="w-12"/>
         </div>
       </div>
       </div>
