@@ -1030,11 +1030,11 @@ setVisibleModal(true)
           </p>
           <p className="flex items-center justify-normal gap-1">
             <BiPhoneCall />
-            (+855) 081 999 716
+            (+855) 087 457 852
           </p>
           <p className="flex items-center justify-normal gap-1">
             <BiPhoneCall />
-            (+855) 085 330 330
+            (+855) 087 457 852
           </p>
         </div>
         <div className=" pt-10">
