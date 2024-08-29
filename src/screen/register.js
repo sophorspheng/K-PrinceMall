@@ -3,8 +3,10 @@ import React from "react";
 import { PiPasswordFill } from "react-icons/pi";
 import { SiComicfury } from "react-icons/si";
 import { TbPasswordUser } from "react-icons/tb";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 export default function register() {
+
   return (
     <div className="flex items-center justify-center w-full h-auto p-20">
       <div className="bg-white shadow-xl shadow-slate-600  p-10 rounded-xl  gap-12">
@@ -41,7 +43,7 @@ export default function register() {
 
         <div className="text-center bg-blue-800 rounded-md p-3 mt-3 w-80">
           <button className="items-center hover:cursor-pointer hover:text-blue-400  font-semibold justify-center text-white">
-            Create new account
+           <Link to="/home"> Create new account</Link>
           </button>
         </div>
         <div className="flex items-center justify-center pt-4">

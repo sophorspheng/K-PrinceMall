@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Slide } from "react-slideshow-image";
+import axios from "axios";
 import "react-slideshow-image/dist/styles.css";
 import slide1 from "../assets/images/princess.png";
 import slide2 from "../assets/images/12.jpg";
@@ -39,8 +40,15 @@ import { BsForward } from "react-icons/bs";
 import { GiForwardField } from "react-icons/gi";
 import { MdForward5 } from "react-icons/md";
 
-export default function HomePage() {
-  const slideImages = [slide1, slide2, slide3];
+export default function HomePage(props) {
+  const [cm1, setCm1] = useState([]);
+  const [cm2, setCm2] = useState([]);
+  const [cm3, setCm3] = useState([]);
+  const [cm4, setCm4] = useState([]);
+  const [cm5, setCm5] = useState([]);
+  const [cm6, setCm6] = useState([]);
+  const [error, setError] = useState(null);
+
   const slideLetters = [
     "Free dilivery on order above 40$ spent.",
     "Fast dilivery: 24hrs in Phnom Penh and 48hrs for provices.",
@@ -48,6 +56,90 @@ export default function HomePage() {
   ];
   // Array of image URLs
   const images = [twin, girl, smart, slide1, twin, girl, smart, twin];
+
+
+  useEffect(() => {
+    const fetchImages1 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images1'
+        ]);
+        setCm1(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+    const fetchImages2 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images2'
+        ]);
+        setCm2(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+    const fetchImages3 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images3'
+        ]);
+        setCm3(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+    const fetchImages4 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images4'
+        ]);
+        setCm4(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+    const fetchImages5 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images5'
+        ]);
+        setCm5(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+    const fetchImages6 = async () => {
+      try {
+        const response = await axios.get([
+          'https://phsarapi.vercel.app/get-images6'
+        ]);
+        setCm6(response.data); // Set the images data to state
+      } catch (err) {
+        setError('Failed to fetch images');
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchImages1();
+    fetchImages2();
+    fetchImages3();
+    fetchImages4();
+    fetchImages5();
+    fetchImages6();
+  }, []);
+
 
   const slides = [];
   for (let i = 0; i < images.length; i += 4) {
@@ -69,9 +161,9 @@ export default function HomePage() {
       setCurrentSlide(currentSlide - 1);
     }
   };
-
+  const slideImages = [slide1, slide2, slide3];
   return (
-    <nav className="sm:p-0 md:p-20">
+    <nav className="">
       <div className="">
         <div className="w-full h-auto">
           <Slide
@@ -79,38 +171,77 @@ export default function HomePage() {
             className="rounded-lg shadow-lg"
             arrows={false} // Hide the arrows directly via props
           >
-            {slideImages.map((each, index) => (
-              <img src={each} className="w-full"/>
-            ))}
+            {slideImages.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <a href="https://github.com/sophorspheng/software">
+            <img src={image} alt={image} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+            </a>
+          </div>
+        ))}
           </Slide>
         </div>
       </div>
+      {/* <Slide easing="ease" className="rounded-lg shadow-lg" arrows={false}>
+    {slideImages.map((imageSet, index) => (
+      <div key={index} className="flex">
+        {imageSet.map((image, imgIndex) => (
+          <div key={imgIndex} className="w-1/3">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} />
+          </div>
+        ))}
+      </div>
+    ))}
+  </Slide> */}
 
       {/* ///image style */}
 
       <div className="w-full h-full pt-10">
         {/* ///responsive md*/}
         <div className="items-center justify-center pb-1 w-full h-auto flex grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
-          <img
-            src={twin}
-            className="shadow shadow-gray-400 drop-shadow-xl "
-            alt=""
-          />
-          <img
-            src={girl}
-            className="shadow shadow-gray-400 drop-shadow-xl "
-            alt=""
-          />
-          <img
-            src={smart}
-            className="shadow shadow-gray-400 drop-shadow-xl "
-            alt=""
-          />
+          {cm1.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+          </div>
+        ))}
+          
+          {cm2.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <a href="https://github.com/sophorspheng/software">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+            </a>
+          </div>
+        ))}
+
+
+          {cm3.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+          </div>
+        ))}
         </div>
         <div className=" items-center justify-center pt-8 w-full h-auto flex grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
-          <img src={twinboy} className="" alt="" />
-          <img src={purpleman} className="" alt="" />
-          <img src={lineman} className="grid " alt="" />
+        {cm4.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+          </div>
+        ))}
+          {cm5.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+          </div>
+        ))}
+          {cm6.map(image => (
+          <div key={image.id} className="image-item text-center">
+            <img src={image.image_path} alt={image.image_name} style={{ width: '100%', height: 'auto' }} className="shadow-lg"/>
+            {/* <p>{image.image_name}</p> */}
+          </div>
+        ))}
         </div>
 
         <div className="pt-10">
@@ -121,7 +252,7 @@ export default function HomePage() {
               arrows={false} // Hide the arrows directly via props
             >
               {slideLetters.map((each, index) => (
-                <h1 className="text-center text-white font-semibold text-2xl font-medium">
+                <h1 key={index} className="text-center text-white font-semibold text-2xl font-medium">
                   {each}
                 </h1>
               ))}

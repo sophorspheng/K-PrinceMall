@@ -1,20 +1,33 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./screen/Layout";
-import Home from "./screen/HomePage";
-import Login from "./screen/Login"; // Example of another page
-import Register from "./screen/register";
+import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './screen/Layout'; // Adjust as per your usage
+import Home from './screen/HomePage'; // Replace with your actual import
+import Dashboard from './screen/dashboard'; // Replace with your actual import
+import ProtectedRoute from './screen/ProtectedRoute'; // Import the ProtectedRoute component
+import ImageGallery from './screen/testdisplay';
 
-export default function App() {
+const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} /> {/* Home renders here */}
-          <Route path="login" element={<Login />} /> {/* Example Login route */}
-          <Route path="register" element={<Register />} /> {/* Example Login route */}
-        </Route>
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/display" element={<ImageGallery />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route 
+            path="/dashboard" 
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } 
+          />
+        </Routes>
+      </Layout>
     </Router>
   );
-}
+};
+
+export default App;

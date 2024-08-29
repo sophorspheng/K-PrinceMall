@@ -2,8 +2,10 @@ import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { Mention, Form, Button } from 'antd';
 
 export default function Login() {
+  
   return (
       <div className="flex items-center justify-center w-full h-100 p-10">
         <div className="bg-white shadow-xl space-y-3 shadow-slate-600  p-10 rounded-xl  gap-12">
